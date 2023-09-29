@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { ThemeContext } from '../../App';
 
 const options = [
     {
@@ -16,7 +17,7 @@ const options = [
 ];
 
 const SelectField = () => {
-    const [selectedFont, setSelectedFont] = useState('serif');
+    const { setSelectedFont } = useContext(ThemeContext);
 
     const handleChange = (e: any) => {
         const { value } = e.target;
@@ -25,7 +26,7 @@ const SelectField = () => {
 
     return (
         <select
-            className={`appearance-none outline-none bg-check bg-no-repeat bg-right pr-6 font-${selectedFont} text-right text-md`}
+            className={`appearance-none outline-none bg-check bg-no-repeat bg-right pr-6 text-right text-md`}
             defaultValue="serif"
             onChange={handleChange}
         >
