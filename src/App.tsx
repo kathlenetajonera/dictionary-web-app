@@ -43,7 +43,7 @@ function App() {
 
     return (
         <ThemeContext.Provider value={{ selectedFont, setSelectedFont }}>
-            <div className="min-h-screen transition-[background] duration-300 text-black dark:bg-black dark:text-white">
+            <div className="min-h-screen overflow-x-hidden transition-[background] duration-300 text-black dark:bg-black dark:text-white">
                 <div
                     className={`p-5 pb-20 mx-auto ${
                         fontClasses[selectedFont as keyof FontTypes]

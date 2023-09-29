@@ -23,7 +23,7 @@ export default {
             backgroundImage: {
                 violet: 'linear-gradient( 135deg, hsl(274deg, 82%, 60%), hsl(274deg, 82%, 60%) )',
                 gray: 'linear-gradient( 135deg, hsl(0deg, 0%, 46%), hsl(0deg, 0%, 46%) )',
-                check: 'url(./src/assets/icons/icon-arrow-down.svg)',
+                check: 'url(/src/assets/icons/icon-arrow-down.svg)',
             },
         },
     },
