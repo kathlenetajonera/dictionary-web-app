@@ -97,9 +97,9 @@ const Content = ({ data, handleSearch }: Props) => {
                         key={url}
                         href={url}
                         target="_blank"
-                        className="flex items-center underline mr-4"
+                        className="flex items-center underline break-all"
                     >
-                        {url}
+                        <span className="flex-1">{url}</span>
                         <span className="ml-2">
                             <img src={linkIcon} alt="new window" />
                         </span>

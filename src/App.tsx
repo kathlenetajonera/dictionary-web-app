@@ -6,6 +6,7 @@ import InputField from './components/InputField';
 import Content from './components/Content';
 import EmptyPlaceholder from './components/EmptyPlaceholder';
 import Skeleton from './components/Skeleton';
+import Attribution from './components/Attribution';
 
 export const ThemeContext = createContext<any>(null);
 
@@ -63,6 +64,7 @@ function App() {
                     )}
                 </div>
             </div>
+            <Attribution />
         </ThemeContext.Provider>
     );
 }
