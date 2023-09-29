@@ -4,11 +4,11 @@ type Props = {
 };
 
 const Separator = ({ full, additionalClass }: Props) => {
-    const width = full ? 'w-full' : 'w-[80%] sm:w-[90%]';
+    const marginLeft = full ? '' : 'ml-6';
 
     return (
         <span
-            className={`block ${width} h-[1px] bg-lightGray ml-auto ${
+            className={`block w-full h-[1px] bg-lightGray ${marginLeft} ${
                 additionalClass || ''
             }`}
         />

@@ -1,16 +1,34 @@
 import { createContext, useEffect, useState } from 'react';
+import { fetchDefinition } from './utils';
+import { DataType, FontTypes } from './types';
 import Header from './components/Header';
 import InputField from './components/InputField';
 import Content from './components/Content';
+import EmptyPlaceholder from './components/EmptyPlaceholder';
+import Skeleton from './components/Skeleton';
 
 export const ThemeContext = createContext<any>(null);
 
+const fontClasses: FontTypes = {
+    sans: 'font-sans',
+    serif: 'font-serif',
+    mono: 'font-mono',
+};
+
 function App() {
     const [selectedFont, setSelectedFont] = useState('serif');
-    const fontClasses: FontTypes = {
-        sans: 'font-sans',
-        serif: 'font-serif',
-        mono: 'font-mono',
+    const [keyword, setKeyword] = useState('');
+    const [data, setData] = useState<DataType | null>(null);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleSearch = async (word: string) => {
+        setKeyword(word);
+        setIsLoading(true);
+
+        const res = await fetchDefinition(word);
+
+        setIsLoading(false);
+        res?.length ? setData(res[0]) : setData(null);
     };
 
     useEffect(() => {
@@ -32,18 +50,21 @@ function App() {
                     } sm:p-8 sm:pb-20 lg:pt-14 lg:max-w-[46.25rem]`}
                 >
                     <Header />
-                    <InputField />
-                    <Content />
+                    <InputField
+                        keyword={keyword}
+                        setKeyword={setKeyword}
+                        handleSearch={handleSearch}
+                    />
+                    {isLoading && <Skeleton />}
+                    {data ? (
+                        <Content data={data} handleSearch={handleSearch} />
+                    ) : (
+                        <EmptyPlaceholder />
+                    )}
                 </div>
             </div>
         </ThemeContext.Provider>
     );
 }
-
-export type FontTypes = {
-    sans: string;
-    serif: string;
-    mono: string;
-};
 
 export default App;
