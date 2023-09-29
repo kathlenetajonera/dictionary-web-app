@@ -26,7 +26,7 @@ const SelectField = () => {
 
     return (
         <select
-            className={`appearance-none outline-none bg-check bg-no-repeat bg-right pr-6 text-right text-md`}
+            className={`appearance-none outline-none bg-transparent bg-check bg-no-repeat bg-right pr-6 text-right text-md`}
             defaultValue="serif"
             onChange={handleChange}
         >

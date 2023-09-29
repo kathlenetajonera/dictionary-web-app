@@ -17,6 +17,7 @@ export default {
                 black: '#050505',
                 gray: '#757575',
                 lightGray: '#f4f4f4',
+                darkGray: '#1f1f1f',
             },
             backgroundImage: {
                 violet: 'linear-gradient( 135deg, hsl(274deg, 82%, 60%), hsl(274deg, 82%, 60%) )',

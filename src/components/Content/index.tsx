@@ -4,7 +4,7 @@ import Separator from '../Separator';
 
 const Content = () => {
     return (
-        <div className="text-black">
+        <div>
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-3xl font-bold sm:text-5xl">keyboard</h1>
